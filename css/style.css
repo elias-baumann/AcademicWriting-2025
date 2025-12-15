@@ -1,0 +1,169 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  color: #111;
+  background: #fff;
+}
+
+/* Page padding */
+.page {
+  padding: clamp(12px, 3vw, 28px);
+}
+
+/* Table */
+.essay-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* important: respects colgroup widths */
+}
+
+/* Visible grid like your red structure */
+.essay-table td {
+  /* border: 2px solid #e53935;  red grid lines */
+  vertical-align: top;
+}
+
+/* Cell padding + default text sizing */
+.cell {
+  padding: clamp(10px, 2vw, 8px);
+}
+
+/* Typography */
+.cell-title h1 {
+  margin: 0;
+  font-size: clamp(28px, 3.2vw, 48px);
+  font-weight: 500;
+  line-height: 80%;
+}
+
+.text-title {
+  font-weight: bolder;
+  padding-top: 30px;
+}
+
+.cell-headline h2 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.cell-author p {
+  margin: 0;
+  font-size: clamp(14px, 1.4vw, 18px);
+  color: #eb3b5a;
+}
+
+.cell-lefttext p,
+.cell-body p {
+  margin: 0;
+  font-size: clamp(14px, 1.4vw, 18px);
+}
+
+.cell-individual-topic p {
+  margin: 0;
+  font-weight: bold;
+  font-style: italic;
+  font-size: clamp(14px, 1.7vw, 100px);
+}
+
+.cell-chapter-title p {
+  margin: 0;
+  font-size: clamp(14px, 1.4vw, 18px);
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Top nav (right cell, row 1) */
+.top-nav {
+  display: flex;
+  gap: 28px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+.top-nav a {
+  color: #eb3b5a;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive: stack cells for readable mobile */
+@media (max-width: 700px) {
+  .essay-table,
+  .essay-table tbody,
+  .essay-table tr,
+  .essay-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Keep some separation between stacked blocks */
+  .essay-table tr {
+    margin-bottom: 12px;
+  }
+
+  /* Nav becomes more compact on mobile */
+  .top-nav {
+    gap: 14px;
+  }
+}
+
+/* -----------------------------------
+   Vertical alignment helpers per cell
+----------------------------------- */
+
+/* oben (default bei Tabellen, explizit für Klarheit) */
+.align-top {
+  vertical-align: top;
+}
+
+/* zentriert */
+.align-center {
+  vertical-align: middle;
+}
+
+/* unten */
+.align-bottom {
+  vertical-align: bottom;
+}
+
+/* 
+Optional: Falls du Flexbox pro Zelle willst 
+(z.B. für komplexere Inhalte)
+*/
+.cell.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell.flex.align-top {
+  justify-content: flex-start;
+}
+
+.cell.flex.align-center {
+  justify-content: center;
+}
+
+.cell.flex.align-bottom {
+  justify-content: flex-end;
+}
