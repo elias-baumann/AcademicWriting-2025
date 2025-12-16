@@ -28,7 +28,8 @@ body {
 
 /* Visible grid like your red structure */
 .essay-table td {
-  /*border: 2px solid #e53935; red grid lines */
+  /* red grid lines */
+  /* border: 2px solid #e53935; */
   vertical-align: top;
 }
 
@@ -36,6 +37,11 @@ body {
 .cell {
   padding: clamp(10px, 2vw, 8px);
 }
+
+/* .first-row {
+  position: fixed;
+  background-color: white;
+} */
 
 /* Typography */
 .cell-title h1 {
@@ -74,6 +80,7 @@ body {
   font-weight: bold;
   font-style: italic;
   font-size: clamp(14px, 1.7vw, 100px);
+  line-height: 100%;
 }
 
 .cell-chapter-title p {
